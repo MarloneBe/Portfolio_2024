@@ -49,7 +49,7 @@
 			{/each}
 		</ul>
 		<div class="flex items-center md:hidden">
-			<Avatar id="avatar-menu" src="//images/burgermenu_icon.png" class="bg-black" />
+			<Avatar id="avatar-menu" src="/images/burgermenu_icon.png" class="bg-black" />
 			<Dropdown class="bg-black text-white" placement="bottom" triggeredBy="#avatar-menu">
 				<DropdownItem id="about">À propos</DropdownItem>
 				<Popover
