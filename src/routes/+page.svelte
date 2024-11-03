@@ -4,6 +4,7 @@
 	import SkillSection from './components/skillSection.svelte';
 	import NavbarSection from './components/navbarSection.svelte';
 	import ContactSection from './components/contactSection.svelte';
+	import FooterSection from './components/footerSection.svelte';
 	import { fade } from 'svelte/transition';
 
 	export let data;
@@ -12,6 +13,7 @@
 	let showSkills = false;
 	let showProjects = false;
 	let showContact = false;
+	let showFooter = false;
 
 	setTimeout(() => {
 		showWelcome = true;
@@ -21,6 +23,9 @@
 				showProjects = true;
 				setTimeout(() => {
 					showContact = true;
+					setTimeout(() => {
+						showFooter = true;
+					}, 500);
 				}, 500);
 			}, 500);
 		}, 500);
@@ -51,6 +56,11 @@
 	{#if showContact}
 		<div in:fade={{ duration: 500 }}>
 			<ContactSection />
+		</div>
+	{/if}
+	{#if showFooter}
+		<div in:fade={{ duration: 500 }}>
+			<FooterSection />
 		</div>
 	{/if}
 </div>
