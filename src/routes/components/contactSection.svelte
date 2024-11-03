@@ -2,7 +2,12 @@
 	import emailjs from 'emailjs-com';
 	import { onMount } from 'svelte';
 	import { Toast } from 'flowbite-svelte';
-	import { CheckCircleSolid, ExclamationCircleSolid, FireOutline, CloseCircleSolid } from 'flowbite-svelte-icons';
+	import {
+		CheckCircleSolid,
+		ExclamationCircleSolid,
+		FireOutline,
+		CloseCircleSolid
+	} from 'flowbite-svelte-icons';
 
 	let firstname = '';
 	let email = '';
@@ -50,21 +55,25 @@
 <section id="contact" class="bg-gradient-to-r from-black to-gray-900 py-20 text-gray-200">
 	<div class="container mx-auto">
 		{#if successMessage}
-		<Toast color="green">
-			<svelte:fragment slot="icon">
-			  <CheckCircleSolid class="w-5 h-5" />
-			</svelte:fragment>
-			Email envoyé avec succès!
-		  </Toast>
+			<div class="fixed left-1/2 top-20 z-50 -translate-x-1/2 transform">
+				<Toast color="green">
+					<svelte:fragment slot="icon">
+						<CheckCircleSolid class="h-5 w-5" />
+					</svelte:fragment>
+					Email envoyé avec succès!
+				</Toast>
+			</div>
 		{/if}
 
 		{#if errorMessage}
-		<Toast color="red">
-			<svelte:fragment slot="icon">
-			  <CloseCircleSolid class="w-5 h-5" />
-			</svelte:fragment>
-			Echec de l'envoi, veuillez réessayer.
-		  </Toast>
+			<div class="fixed left-1/2 top-20 z-50 -translate-x-1/2 transform">
+				<Toast color="red">
+					<svelte:fragment slot="icon">
+						<CloseCircleSolid class="h-5 w-5" />
+					</svelte:fragment>
+					Echec de l'envoi, veuillez réessayer.
+				</Toast>
+			</div>
 		{/if}
 		<h2 class="mb-8 text-center text-3xl font-bold text-white">Me contacter</h2>
 		<form
@@ -98,10 +107,10 @@
 				></textarea>
 			</div>
 			<div class="flex justify-center">
-				<button type="submit" class="rounded bg-white px-4 py-2 text-black hover:bg-gray-300">Envoyer</button>
+				<button type="submit" class="rounded bg-white px-4 py-2 text-black hover:bg-gray-300"
+					>Envoyer</button
+				>
 			</div>
 		</form>
-
-		
 	</div>
 </section>

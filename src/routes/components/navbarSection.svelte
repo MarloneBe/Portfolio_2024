@@ -29,18 +29,18 @@
 							d'ordinateurs. Mon père travaillant dans l'informatique, j'ai toujours interagi de
 							près ou de loin avec des technologies qui me dépassaient étant enfant.
 							<br /><br /> De ce fait, il a fini par me transmettre sa passion pour ce domaine.
-							C'est pourquoi <strong>j'ai rejoint la web@cadémie</strong>. Cette formation
-							représentait une <strong>porte d'accès</strong> vers un monde que je convoitais depuis
-							mon plus jeune âge. J'ai décidé de <strong>commencer par le développement web</strong>
+							C'est pourquoi j'ai rejoint la web@cadémie. Cette formation
+							représentait une porte d'accès vers un monde que je convoitais depuis
+							mon plus jeune âge. J'ai décidé de commencer par le développement web
 							qui est assez attirant de par son aspect visuel. Pouvoir observer rapidement
 							l'évolution de mes créations me plaisait énormément. <br />Mais cela n'est qu'une
 							étape selon moi. Grâce à mes deux ans au sein de la web@cadémie, j'ai pu découvrir la
 							création de sites web et m'amuser grâce à cet univers, mais je veux en découvrir plus
 							en explorant d'autres horizons. C'est pourquoi j'ai l'intention de
-							<strong>changer de domaine</strong>
-							pour <strong>découvrir d'autres technologies passionnantes</strong>
+							changer de domaine
+							pour découvrir d'autres technologies passionnantes
 							et de sujets intéressants. <br />J'ai trouvé un moyen de
-							<strong>travailler en m'amusant</strong> et je continuerai de suivre cette voie qui me
+							travailler en m'amusant et je continuerai de suivre cette voie qui me
 							plaît.
 						</p>
 					</Popover>
@@ -78,19 +78,19 @@
 						d'ordinateurs. Mon père travaillant dans l'informatique, j'ai toujours interagi de près
 						ou de loin avec des technologies qui me dépassaient étant enfant.
 						<br /><br /> De ce fait, il a fini par me transmettre sa passion pour ce domaine. C'est
-						pourquoi <strong>j'ai rejoint la web@cadémie</strong>. Cette formation représentait une
-						<strong>porte d'accès</strong>
+						pourquoi j'ai rejoint la web@cadémie. Cette formation représentait une
+						porte d'accès
 						vers un monde que je convoitais depuis mon plus jeune âge. J'ai décidé de
-						<strong>commencer par le développement web</strong>
+						commencer par le développement web
 						qui est assez attirant de par son aspect visuel. Pouvoir observer rapidement l'évolution
 						de mes créations me plaisait énormément. <br />Mais cela n'est qu'une étape selon moi.
 						Grâce à mes deux ans au sein de la web@cadémie, j'ai pu découvrir la création de sites
 						web et m'amuser grâce à cet univers, mais je veux en découvrir plus en explorant
 						d'autres horizons. C'est pourquoi j'ai l'intention de
-						<strong>changer de domaine</strong>
-						pour <strong>découvrir d'autres technologies passionnantes</strong>
+						changer de domaine
+						pour découvrir d'autres technologies passionnantes
 						et de sujets intéressants. <br />J'ai trouvé un moyen de
-						<strong>travailler en m'amusant</strong> et je continuerai de suivre cette voie qui me plaît.
+						travailler en m'amusant et je continuerai de suivre cette voie qui me plaît.
 					</p>
 				</Popover>
 				<DropdownItem on:click={() => {
