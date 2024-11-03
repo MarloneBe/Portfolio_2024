@@ -1,24 +1,29 @@
 <script lang="ts">
-	import { Carousel,Button } from 'flowbite-svelte';
+	import { Carousel, Button } from 'flowbite-svelte';
     import { CaretRightOutline, CaretLeftOutline } from 'flowbite-svelte-icons';
 	import EmblaCarousel from 'embla-carousel';
 	import { onMount } from 'svelte';
+	import { writable } from 'svelte/store';
 
 	export let data;
 	let embla: any;
-	let emblaNode: HTMLElement | null;
+	let emblaNode: any;
 	let projectImages;
 	const projects: any = data.projects;
+	let activeIndex = writable(0);
 
 	onMount(() => {
 		emblaNode = document.querySelector('.embla');
 		if (emblaNode) {
 			embla = EmblaCarousel(emblaNode, {
 				loop: true,
-				align: 'start'
+				align: 'start',
+			});
+			embla.on('select', () => {
+				activeIndex.set(embla.selectedScrollSnap());
 			});
 		} else {
-			console.error('Embla carousel node not found');
+			console.error('Embla carousel not found');
 		}
 	});
 
@@ -37,7 +42,7 @@
 
 		<div class="embla relative overflow-hidden">
 			<div class="embla__container flex">
-				{#each projects as project, key}
+				{#each projects as project, index (index)}
 					<div class="flex w-full min-w-full justify-center">
 						<div class="w-full h-full max-w-2xl bg-gray-800 p-6 shadow-md md:rounded-lg">
 							<div class="hidden">
@@ -50,24 +55,39 @@
 								let:Controls
 								class="h-64"
 							>
-                            <Controls let:changeSlide>
-                                <Button pill class="p-2 absolute top-1/2 -translate-y-1/2 start-4 bg-gray-500" on:click={() => changeSlide(false)}>
-                                    <CaretLeftOutline />
-                                </Button>
-                            
-                                <Button pill class="p-2 absolute top-1/2 -translate-y-1/2 end-4 bg-gray-500" on:click={() => changeSlide(true)}>
-                                    <CaretRightOutline />
-                                </Button>
-                            </Controls>
+								<Controls let:changeSlide>
+									<Button
+										pill
+										class="p-2 absolute top-1/2 -translate-y-1/2 start-4 bg-gray-500"
+										on:click={() => changeSlide(false)}
+									>
+										<CaretLeftOutline />
+									</Button>
+
+									<Button
+										pill
+										class="p-2 absolute top-1/2 -translate-y-1/2 end-4 bg-gray-500"
+										on:click={() => changeSlide(true)}
+									>
+										<CaretRightOutline />
+									</Button>
+								</Controls>
 								<Indicators />
 							</Carousel>
 							<p class="mb-4 text-gray-300">{project.description}</p>
-							<a href={project.link} target="_blank" class="text-gray-300 hover:text-white"
-								>Voir le projet sur github</a
-							><br />
-							<p>
-								{key + 1}/{projects.length}
-							</p>
+							<a href={project.link} target="_blank" class="text-gray-300 hover:text-white">
+								Voir le projet sur github
+							</a>
+							
+							<div class="mt-4 flex justify-center space-x-2">
+								{#each projects as proj, i}
+									<button
+										class="w-4 h-4 rounded-full focus:outline-none
+										{($activeIndex === i ? 'bg-white' : 'bg-gray-500')}"
+										on:click={() => embla.scrollTo(i)}
+									></button>
+								{/each}
+							</div>
 						</div>
 					</div>
 				{/each}

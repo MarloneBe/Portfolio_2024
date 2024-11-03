@@ -2,7 +2,6 @@
 	import { inview } from 'svelte-inview';
 
 	export let data;
-	console.log("data == ", data)
 	const skills: any = data.skills;
 
 	let visible = false;

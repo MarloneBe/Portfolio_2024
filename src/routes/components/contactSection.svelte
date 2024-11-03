@@ -1,11 +1,8 @@
 <script lang="ts">
 	import emailjs from 'emailjs-com';
-	import { onMount } from 'svelte';
 	import { Toast } from 'flowbite-svelte';
 	import {
 		CheckCircleSolid,
-		ExclamationCircleSolid,
-		FireOutline,
 		CloseCircleSolid
 	} from 'flowbite-svelte-icons';
 
@@ -25,25 +22,18 @@
 
 		emailjs.send('service_9u1wlhr', 'template_0rd3snn', templateParams, 'nF_izI7XV8cY8kuxF').then(
 			(response) => {
-				console.log('Email envoyé', response.status, response.text);
 				successMessage = true;
 				errorMessage = false;
-				// Réinitialiser les champs
 				firstname = '';
 				email = '';
 				message = '';
-
-				// Masquer le message après 3 secondes
 				setTimeout(() => {
 					successMessage = false;
 				}, 3000);
 			},
 			(err) => {
-				console.error("Erreur lors de l'envoi ", err);
 				errorMessage = true;
 				successMessage = false;
-
-				// Masquer le message après 3 secondes
 				setTimeout(() => {
 					errorMessage = false;
 				}, 3000);
