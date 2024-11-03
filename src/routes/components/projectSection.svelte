@@ -39,7 +39,7 @@
 			<div class="embla__container flex">
 				{#each projects as project, key}
 					<div class="flex w-full min-w-full justify-center">
-						<div class="w-full max-w-2xl bg-gray-800 p-6 shadow-md md:rounded-lg">
+						<div class="w-full h-full max-w-2xl bg-gray-800 p-6 shadow-md md:rounded-lg">
 							<div class="hidden">
 								{(projectImages = [project.image, project.image2, project.image3].filter(Boolean))}
 							</div>
@@ -62,7 +62,7 @@
 								<Indicators />
 							</Carousel>
 							<p class="mb-4 text-gray-300">{project.description}</p>
-							<a href={project.link} class="text-gray-300 hover:text-white"
+							<a href={project.link} target="_blank" class="text-gray-300 hover:text-white"
 								>Voir le projet sur github</a
 							><br />
 							<p>

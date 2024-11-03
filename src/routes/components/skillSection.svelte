@@ -1,6 +1,10 @@
 <script lang="ts">
 	import { inview } from 'svelte-inview';
 
+	export let data;
+	console.log("data == ", data)
+	const skills: any = data.skills;
+
 	let visible = false;
 
 	function handleInView() {
@@ -19,46 +23,13 @@
 		<div
 			class="grid grid-cols-2 items-center justify-center gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"
 		>
+		{#each skills as skill}
 			<div
 				class={`flex transform justify-center transition-transform duration-700 ease-out ${visible ? 'translate-x-0' : 'translate-x-full'}`}
 			>
-				<img src="/images/html.png" alt="HTML" class="h-20 w-20 object-contain" />
+				<img src={skill.path} alt="Logo {skill.name}" class="h-20 w-20 object-contain" />
 			</div>
-			<div
-				class={`flex transform justify-center transition-transform duration-700 ease-out ${visible ? 'translate-x-0' : 'translate-x-full'}`}
-			>
-				<img src="/images/css.png" alt="CSS" class="h-20 w-20 object-contain" />
-			</div>
-			<div
-				class={`flex transform justify-center transition-transform duration-700 ease-out ${visible ? 'translate-x-0' : 'translate-x-full'}`}
-			>
-				<img
-					src="/images/javascript.png"
-					alt="JavaScript"
-					class="h-20 w-20 object-contain"
-				/>
-			</div>
-			<div
-				class={`flex transform justify-center transition-transform duration-700 ease-out ${visible ? 'translate-x-0' : 'translate-x-full'}`}
-			>
-				<img src="/images/svelte.png" alt="Svelte" class="h-20 w-20 object-contain" />
-			</div>
-
-			<div
-				class={`flex transform justify-center transition-transform duration-700 ease-out ${visible ? 'translate-x-0' : 'translate-x-full'}`}
-			>
-				<img src="/images/react.png" alt="React" class="h-20 w-20 object-contain" />
-			</div>
-
-			<div
-				class={`flex transform justify-center transition-transform duration-700 ease-out ${visible ? 'translate-x-0' : 'translate-x-full'}`}
-			>
-				<img
-					src="/images/react_native.png"
-					alt="React native"
-					class="h-20 w-20 object-contain"
-				/>
-			</div>
+			{/each}
 		</div>
 	</div>
 </section>

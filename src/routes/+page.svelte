@@ -38,7 +38,7 @@
 
 	{#if showSkills}
 		<div in:fade={{ duration: 500 }}>
-			<SkillSection />
+			<SkillSection {data}/>
 		</div>
 	{/if}
 

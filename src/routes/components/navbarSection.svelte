@@ -5,45 +5,58 @@
 	let sections = ['À propos', 'Compétences', 'Projets', 'Contact'];
 </script>
 
-<nav class="fixed z-10 w-full border-b border-gray-800 bg-primaryBlack-dark">
+<nav class="bg-primaryBlack-dark fixed z-10 w-full border-b border-gray-800">
 	<div class="container mx-auto flex justify-between p-4">
-		<Button class="text-xl font-bold text-white" on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Marlone Bertuit</Button>
+		<Button
+			class="text-xl font-bold text-white"
+			on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Marlone Bertuit</Button
+		>
 		<ul class="hidden space-x-6 md:flex">
 			{#each sections as section}
 				{#if section == 'À propos'}
-					<li>
-						<p class="mr-5 text-lg italic text-gray-300 hover:text-white" id="about">
+						<Button class="mr-5 text-lg italic text-gray-300 hover:text-white" id="about">
 							{section}
-						</p>
-					</li>
+						</Button>
 					<Popover
 						class="w-fit bg-gradient-to-r from-gray-900 to-black text-sm text-white "
 						triggeredBy="#about"
 						transition={fade}
 						params={{ duration: 700 }}
-						>Bonjour,<br />
-						Je m'appelle <b>Marlone Bertuit</b> et je suis étudiant en fin d'année à la Web@cadémie
-						par Epitech. Jeune passionné de l'informatique qui s'est orienté dans le développement
-						web.
-						<br /><br />
-
-						J'ai appris à utiliser les différents languages et framework afin que les projets que je
-						réalise soient toujours meilleurs que le précédent. J'aime découvrir toutes les
-						technologies existantes dans ce domaine car je suis émerveillé à chaque fois que j'en
-						utilise une nouvelle.
-						<br /><br />
-
-						Grâce au développement web, je me suis une nouvelle fois rendu compte que l'informatique
-						est le domaine qui me plait le plus.</Popover
 					>
+						<Avatar src="/images/photo.png" size="xl" />
+						<p class="text-lg">
+							Du plus lointain dont je puisse me souvenir, j'ai toujours grandi en étant entouré
+							d'ordinateurs. Mon père travaillant dans l'informatique, j'ai toujours interagi de
+							près ou de loin avec des technologies qui me dépassaient étant enfant.
+							<br /><br /> De ce fait, il a fini par me transmettre sa passion pour ce domaine.
+							C'est pourquoi <strong>j'ai rejoint la web@cadémie</strong>. Cette formation
+							représentait une <strong>porte d'accès</strong> vers un monde que je convoitais depuis
+							mon plus jeune âge. J'ai décidé de <strong>commencer par le développement web</strong>
+							qui est assez attirant de par son aspect visuel. Pouvoir observer rapidement
+							l'évolution de mes créations me plaisait énormément. <br />Mais cela n'est qu'une
+							étape selon moi. Grâce à mes deux ans au sein de la web@cadémie, j'ai pu découvrir la
+							création de sites web et m'amuser grâce à cet univers, mais je veux en découvrir plus
+							en explorant d'autres horizons. C'est pourquoi j'ai l'intention de
+							<strong>changer de domaine</strong>
+							pour <strong>découvrir d'autres technologies passionnantes</strong>
+							et de sujets intéressants. <br />J'ai trouvé un moyen de
+							<strong>travailler en m'amusant</strong> et je continuerai de suivre cette voie qui me
+							plaît.
+						</p>
+					</Popover>
 				{:else}
 					<li>
-						<a
-							href={'#' + section.toLowerCase()}
+						<Button
 							class="mr-5 text-lg italic text-gray-300 hover:text-white"
+							on:click={() => {
+								const selectedSection = document.getElementById(section.toLowerCase());
+								if (selectedSection) {
+									selectedSection.scrollIntoView({ behavior: 'smooth' });
+								}
+							}}
 						>
 							{section}
-						</a>
+						</Button>
 					</li>
 				{/if}
 			{/each}
@@ -58,17 +71,54 @@
 					trigger="click"
 					transition={fade}
 					params={{ duration: 700 }}
-					>Bonjour,<br />
-					Je m'appelle Marlone Bertuit et je suis étudiant à la Web@cadémie par Epitech. Jeune passionné
-					de l'informatique qui s'est orienté dans le développement web. J'apprends à utiliser les différents
-					languages et framework afin que les projets que je réalise soient toujours meilleurs que le
-					précédent. J'aime découvrir toutes les technologies existantes dans ce domaine car je suis
-					émerveillé à chaque fois que j'en utilise une nouvelle. Grâce au développement web, je me suis
-					une nouvelle fois rendu compte que l'informatique est le domaine qui me plait le plus.</Popover
 				>
-				<DropdownItem>Compétences</DropdownItem>
-				<DropdownItem>Projets</DropdownItem>
-				<DropdownItem>Contact</DropdownItem>
+					<Avatar src="/images/photo.png" size="lg" />
+					<p class="text-base">
+						Du plus lointain dont je puisse me souvenir, j'ai toujours grandi en étant entouré
+						d'ordinateurs. Mon père travaillant dans l'informatique, j'ai toujours interagi de près
+						ou de loin avec des technologies qui me dépassaient étant enfant.
+						<br /><br /> De ce fait, il a fini par me transmettre sa passion pour ce domaine. C'est
+						pourquoi <strong>j'ai rejoint la web@cadémie</strong>. Cette formation représentait une
+						<strong>porte d'accès</strong>
+						vers un monde que je convoitais depuis mon plus jeune âge. J'ai décidé de
+						<strong>commencer par le développement web</strong>
+						qui est assez attirant de par son aspect visuel. Pouvoir observer rapidement l'évolution
+						de mes créations me plaisait énormément. <br />Mais cela n'est qu'une étape selon moi.
+						Grâce à mes deux ans au sein de la web@cadémie, j'ai pu découvrir la création de sites
+						web et m'amuser grâce à cet univers, mais je veux en découvrir plus en explorant
+						d'autres horizons. C'est pourquoi j'ai l'intention de
+						<strong>changer de domaine</strong>
+						pour <strong>découvrir d'autres technologies passionnantes</strong>
+						et de sujets intéressants. <br />J'ai trouvé un moyen de
+						<strong>travailler en m'amusant</strong> et je continuerai de suivre cette voie qui me plaît.
+					</p>
+				</Popover>
+				<DropdownItem on:click={() => {
+					const selectedSection = document.getElementById('compétences');
+					if (selectedSection) {
+						selectedSection.scrollIntoView({ behavior: 'smooth' });
+					}
+				}}>
+					Compétences
+				</DropdownItem>
+				
+				<DropdownItem on:click={() => {
+					const selectedSection = document.getElementById('projets');
+					if (selectedSection) {
+						selectedSection.scrollIntoView({ behavior: 'smooth' });
+					}
+				}}>
+					Projets
+				</DropdownItem>
+				
+				<DropdownItem on:click={() => {
+					const selectedSection = document.getElementById('contact');
+					if (selectedSection) {
+						selectedSection.scrollIntoView({ behavior: 'smooth' });
+					}
+				}}>
+					Contact
+				</DropdownItem>
 			</Dropdown>
 		</div>
 	</div>
