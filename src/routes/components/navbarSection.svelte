@@ -7,7 +7,7 @@
 
 <nav class="fixed z-10 w-full border-b border-gray-800 bg-primaryBlack-dark">
 	<div class="container mx-auto flex justify-between p-4">
-		<Button class="text-xl font-bold text-white" on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Monkey.co</Button>
+		<Button class="text-xl font-bold text-white" on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Marlone Bertuit</Button>
 		<ul class="hidden space-x-6 md:flex">
 			{#each sections as section}
 				{#if section == 'À propos'}
@@ -49,7 +49,7 @@
 			{/each}
 		</ul>
 		<div class="flex items-center md:hidden">
-			<Avatar id="avatar-menu" src="src/public/images/burgermenu_icon.png" class="bg-black" />
+			<Avatar id="avatar-menu" src="//images/burgermenu_icon.png" class="bg-black" />
 			<Dropdown class="bg-black text-white" placement="bottom" triggeredBy="#avatar-menu">
 				<DropdownItem id="about">À propos</DropdownItem>
 				<Popover

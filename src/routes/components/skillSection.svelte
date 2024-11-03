@@ -22,18 +22,18 @@
 			<div
 				class={`flex transform justify-center transition-transform duration-700 ease-out ${visible ? 'translate-x-0' : 'translate-x-full'}`}
 			>
-				<img src="src/public/images/html.png" alt="HTML" class="h-20 w-20 object-contain" />
+				<img src="/images/html.png" alt="HTML" class="h-20 w-20 object-contain" />
 			</div>
 			<div
 				class={`flex transform justify-center transition-transform duration-700 ease-out ${visible ? 'translate-x-0' : 'translate-x-full'}`}
 			>
-				<img src="src/public/images/css.png" alt="CSS" class="h-20 w-20 object-contain" />
+				<img src="/images/css.png" alt="CSS" class="h-20 w-20 object-contain" />
 			</div>
 			<div
 				class={`flex transform justify-center transition-transform duration-700 ease-out ${visible ? 'translate-x-0' : 'translate-x-full'}`}
 			>
 				<img
-					src="src/public/images/javascript.png"
+					src="/images/javascript.png"
 					alt="JavaScript"
 					class="h-20 w-20 object-contain"
 				/>
@@ -41,20 +41,20 @@
 			<div
 				class={`flex transform justify-center transition-transform duration-700 ease-out ${visible ? 'translate-x-0' : 'translate-x-full'}`}
 			>
-				<img src="src/public/images/svelte.png" alt="Svelte" class="h-20 w-20 object-contain" />
+				<img src="/images/svelte.png" alt="Svelte" class="h-20 w-20 object-contain" />
 			</div>
 
 			<div
 				class={`flex transform justify-center transition-transform duration-700 ease-out ${visible ? 'translate-x-0' : 'translate-x-full'}`}
 			>
-				<img src="src/public/images/react.png" alt="React" class="h-20 w-20 object-contain" />
+				<img src="/images/react.png" alt="React" class="h-20 w-20 object-contain" />
 			</div>
 
 			<div
 				class={`flex transform justify-center transition-transform duration-700 ease-out ${visible ? 'translate-x-0' : 'translate-x-full'}`}
 			>
 				<img
-					src="src/public/images/react_native.png"
+					src="/images/react_native.png"
 					alt="React native"
 					class="h-20 w-20 object-contain"
 				/>
